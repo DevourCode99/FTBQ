@@ -1,0 +1,87 @@
+{
+  chapters: [
+    {
+      id: 0,
+      title: "Dangerous Start",
+      quests: [
+        {
+          id: 1,
+          title: "Bread for the Journey",
+          description: "The smell of warm bread fills the camp. Before venturing forth, gather 128 loafs for the group.",
+          icon: "minecraft:bread",
+          tasks: [
+            {id: 11, type: "item", item: "minecraft:bread", count: 128}
+          ],
+          rewards: [
+            {id: 12, type: "item", item: "minecraft:cooked_beef", count: 16}
+          ]
+        },
+        {
+          id: 2,
+          title: "First Blood",
+          description: "A sinister Rare Lighter from the Creeping Woods has been spotted. Slay it to prove your strength.",
+          icon: "creepingwoods:rare_lighter_spawn_egg",
+          tasks: [
+            {id: 21, type: "kill", entity: "creepingwoods:rare_lighter", count: 1}
+          ],
+          rewards: [
+            {id: 22, type: "xp", xp: 100}
+          ],
+          dependencies: [1]
+        },
+        {
+          id: 3,
+          title: "Distress Call",
+          description: "When four adventurers are online, a random one is whisked 1,000 blocks away and slowed. Friends must reach them in time!",
+          icon: "minecraft:ender_pearl",
+          tasks: [
+            {id: 31, type: "custom", id_name: "kubejs:rescueevent"}
+          ],
+          rewards: [
+            {id: 32, type: "item", item: "minecraft:golden_carrot", count: 3}
+          ],
+          dependencies: [2]
+        },
+        {
+          id: 4,
+          title: "Iron Reserves",
+          description: "Even simple iron is precious in these wilds. Gather 32 ingots for tools and defense.",
+          icon: "minecraft:iron_ingot",
+          tasks: [
+            {id: 41, type: "item", item: "minecraft:iron_ingot", count: 32}
+          ],
+          rewards: [
+            {id: 42, type: "item", item: "minecraft:shield", count: 1}
+          ],
+          dependencies: [3]
+        },
+        {
+          id: 5,
+          title: "Silence the Spirit Guide",
+          description: "Born from chaos, the Spirit Guide whispers doom. Defeat it before its influence spreads.",
+          icon: "born_in_chaos_v1:spirit_guide_spawn_egg",
+          tasks: [
+            {id: 51, type: "kill", entity: "born_in_chaos_v1:spirit_guide", count: 1}
+          ],
+          rewards: [
+            {id: 52, type: "item", item: "minecraft:emerald", count: 5}
+          ],
+          dependencies: [4]
+        },
+        {
+          id: 6,
+          title: "Laviathan's Bane",
+          description: "A colossal Laviathan roams the seas. Defeat this beast and secure safe waters for all.",
+          icon: "alexsmobs:spawn_egg_laviathan",
+          tasks: [
+            {id: 61, type: "kill", entity: "alexsmobs:laviathan", count: 1}
+          ],
+          rewards: [
+            {id: 62, type: "item", item: "minecraft:heart_of_the_sea", count: 1}
+          ],
+          dependencies: [5]
+        }
+      ]
+    }
+  ]
+}
